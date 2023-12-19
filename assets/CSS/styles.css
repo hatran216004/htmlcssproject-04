@@ -479,47 +479,40 @@ a {
 }
 
 .about_media-img--bottom {
-    margin: 0;
-    display: block;
-    object-fit: cover;
+    width: 100%;
 }
 
-.about__media-decor-2,
-.about__media-decor-3,
-.about__media-decor-4,
-.about__media-decor-5,
-.about__media-decor-6,
-.about__media-decor-7 {
+.about__media-decor-img {
     position: absolute;
 }
 
-.about__media-decor-2 {
+.about__media-decor-img:nth-child(1) {
     top: 12px;
-    left: 388px;
+    right: 63px;
 }
 
-.about__media-decor-3 {
+.about__media-decor-img:nth-child(2) {
     top: -16px;
-    left: 426px;
+    right: 13px;
 }
 
-.about__media-decor-4 {
+.about__media-decor-img:nth-child(3) {
     top: 33px;
-    left: 425px;
+    right: -21px;
 }
 
-.about__media-decor-5 {
-    left: 468px;
+.about__media-decor-img:nth-child(4) {
+    right: -33px;
     top: 268px;
 }
 
-.about__media-decor-6 {
-    left: 427px;
+.about__media-decor-img:nth-child(5) {
+    right: 19px;
     top: 336px;
 }
 
-.about__media-decor-7 {
-    left: 377px;
+.about__media-decor-img:nth-child(6) {
+    right: -42px;
     bottom: -54px;
 }
 /* About content 2 */
@@ -528,21 +521,31 @@ a {
     max-width: 516px;
 }
 
-.about__services-list {
-    margin-left: -8px;
-    margin-top: 52px;
+.about__desc-bottom {
+    margin-bottom: 54px;
+}
+
+.about__tab-list {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 56px;
 }
 
-.about__services-item {
+.about__tab-item {
+    cursor: pointer;
+    position: relative;
     display: flex;
     align-items: center;
-    column-gap: 10px;
+    padding-bottom: 14px;
+    column-gap: 12px;
 }
 
-.about__services-desc {
+.about__tab-icon {
+    width: 20px;
+}
+
+.about__tab-title {
     white-space: nowrap;
     color: #48496a;
     font-family: var(--font-heading);
@@ -551,28 +554,34 @@ a {
     line-height: 1; /* 100% */
 }
 
-.about__content-skeleton {
-    margin: 14px 0 36px;
-    width: 100%;
+.about__tab-item-active::after,
+.about__tab-list::after {
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: 0;
     height: 2px;
     background-color: #ffeee7;
     border-radius: 999px;
-    position: relative;
-}
-
-.about__content-skeleton::after {
-    content: "";
-    display: inline-block;
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 95px;
-    height: 2px;
-    background-color: var(--primary-color);
-    border-radius: 999px;
 }
 
-.about__bottom-desc {
+.about__tab-item-active::after {
+    width: 95px;
+    background: var(--primary-color);
+    z-index: 1;
+}
+
+.about__tab-content-item {
+    display: none;
+}
+
+.about__tab-content-item.about__tab-content-active {
+    display: block;
+}
+
+.about__tab-content-desc {
+    padding-top: 36px;
     width: 391px;
     color: #656689;
     font-size: 1.4rem;
@@ -580,7 +589,7 @@ a {
     line-height: 1.71;
 }
 
-.about__bottom-more {
+.about__tab-more {
     margin-top: 32px;
     display: inline-block;
     color: var(--primary-color);
@@ -589,11 +598,11 @@ a {
     line-height: 1;
 }
 
-.about__bottom-more:hover {
+.about__tab-more:hover {
     opacity: 0.9;
 }
 
-.about__bottom-more::after {
+.about__tab-more::after {
     content: "";
     display: block;
     margin-top: 5px;
@@ -706,4 +715,52 @@ a {
     position: relative;
     left: 50%;
     translate: -50% 0;
+}
+/* ================= Staff ================= */
+.staff {
+    margin-top: 130px;
+}
+
+.staff__heading,
+.staff__title {
+    text-align: center;
+}
+
+.staff__list {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 68px;
+}
+
+.staff__item {
+    position: relative;
+}
+
+.staff_item--thumb {
+    position: relative;
+    height: 266px;
+}
+
+.staff_item--thumb::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 129.5px;
+    background: linear-gradient(180deg, #90ccff 0%, #59a8eb 95.96%);
+}
+
+.staff_item--img {
+    border-radius: 129.5px;
+    display: block;
+    position: absolute;
+    top: -20px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+}
+
+.staff__item-decor {
+    position: absolute;
 }

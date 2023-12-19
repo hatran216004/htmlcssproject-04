@@ -939,14 +939,24 @@ a {
     margin-top: 56px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 44px;
+    /* column-gap: 44px; */
 }
 
 .pricing-item {
+    justify-self: center;
+    /* width: 302px; */
     padding: 30px 28px 43px;
     border-radius: 20px;
     background: #fff;
     transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.pricing-item:nth-child(1) {
+    justify-self: flex-end;
+}
+
+.pricing-item:nth-child(3) {
+    justify-self: flex-start;
 }
 
 .pricing-item:hover {

@@ -92,6 +92,17 @@ a {
     color: #5e6085;
 }
 
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 3);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp.lv1 {
+    --line-clamp: 1;
+}
+
 /* ================= Header ================= */
 .fixed {
     position: sticky;
@@ -1147,4 +1158,91 @@ a {
 .review__dot--active {
     width: 24px;
     background-color: var(--primary-color);
+}
+
+/* ================= Blog ================= */
+.blog {
+    margin-top: 77px;
+}
+
+.blog-heading {
+    display: flex;
+    align-items: center;
+    column-gap: 512px;
+}
+
+.blog-heading__title {
+    max-width: 350px;
+}
+
+.blog__btn {
+    --height: 56px;
+    margin-top: 24px;
+    min-width: 182px;
+    background-color: transparent;
+    border-color: rgba(255, 91, 46, 0.6);
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.blog__list {
+    margin-top: 54px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 48px;
+}
+
+.blog-item:nth-child(2) .blog-item__media {
+    background: #ff997e;
+}
+
+.blog-item:nth-child(3) .blog-item__media {
+    background: #5bd6e2;
+}
+
+.blog-item__media {
+    padding: 24px 0 0 36px;
+    border-radius: 24px;
+    background: #90ccff;
+}
+
+.blog-item__thumb {
+    width: 322px;
+    height: 296px;
+    object-fit: cover;
+    display: block;
+}
+
+.blog-item__date {
+    margin-bottom: 25px;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.21; /* 121.429% */
+}
+
+.blog-item__info {
+    padding: 28px 0;
+}
+
+.blog-item__info--link {
+    color: #000958;
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.55; /* 154.545% */
+}
+
+.blog-item__info--link:hover {
+    opacity: 0.9;
+}
+
+.blog-item__info--desc {
+    margin-top: 16px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #656689;
+    line-height: 1.71; /* 171.429% */
 }

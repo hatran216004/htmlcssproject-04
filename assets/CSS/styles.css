@@ -1046,10 +1046,20 @@ a {
     column-gap: 44px;
 }
 
+.review__wrap {
+    overflow: hidden;
+}
+
+.review__list {
+    display: flex;
+}
+
 .review-item {
     display: flex;
     align-items: center;
     column-gap: 115px;
+    flex-shrink: 0;
+    width: 100%;
 }
 
 .review-media {
@@ -1081,11 +1091,12 @@ a {
 }
 
 .review-content__quote {
+    width: 553px;
     margin: 24px 0 34px;
     color: #000;
     font-size: 1.8rem;
     font-weight: 400;
-    line-height: 1.55;
+    line-height: 1.56;
 }
 
 .review-content__author {
@@ -1122,6 +1133,10 @@ a {
     justify-content: center;
     transition: color, box-shadow, background-color;
     transition-duration: 0.3s;
+}
+
+.review-control:nth-child(3) {
+    margin-left: auto;
 }
 
 .review-control__icon-rotate {
@@ -1171,8 +1186,12 @@ a {
     column-gap: 512px;
 }
 
-.blog-heading__title {
+.blog-heading__caption {
     max-width: 350px;
+}
+
+.blog-desc {
+    margin-top: 0;
 }
 
 .blog__btn {
@@ -1215,6 +1234,7 @@ a {
 }
 
 .blog-item__date {
+    display: block;
     margin-bottom: 25px;
     color: #fff;
     font-family: var(--font-heading);
@@ -1224,7 +1244,7 @@ a {
 }
 
 .blog-item__info {
-    padding: 28px 0;
+    padding: 28px 3px 0 0;
 }
 
 .blog-item__info--link {
@@ -1245,4 +1265,147 @@ a {
     font-weight: 400;
     color: #656689;
     line-height: 1.71; /* 171.429% */
+}
+
+/* ================= Footer ================= */
+.footer {
+    background: linear-gradient(to right, #fff6ed 43%, #fffaf5 42%);
+    margin-top: 131px;
+    padding: 52px 0 48px;
+}
+
+.footer__inner {
+    display: flex;
+    column-gap: 129px;
+    align-items: center;
+}
+
+.footer__left {
+    width: 42%;
+}
+
+.footer__input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    padding: 0 22px;
+    font-size: 1.4rem;
+}
+
+.footer__input::placeholder {
+    color: #656689;
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.17;
+    opacity: 0.8;
+}
+
+.footer__subscribe-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 35px;
+    width: 268px;
+    height: 46px;
+    background: #fff;
+    border-radius: 23px;
+    border: 1px solid rgba(255, 91, 46, 0.25);
+}
+
+.form__button-submit {
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: -1px;
+    width: 45px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    box-shadow: 0px 15px 28px -7px rgba(255, 91, 46, 0.3);
+}
+
+.footer__input--icon {
+    rotate: 180deg;
+    right: 12px;
+    bottom: 13px;
+    z-index: 1;
+}
+
+.form__button-submit:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.footer__more {
+    margin-top: 68px;
+    color: #000958;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.footer-socials {
+    margin-top: 16px;
+    display: flex;
+    column-gap: 16px;
+}
+
+.footer-socials__icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background: #fff;
+    box-shadow: 0px 16px 28px -10px rgba(211, 132, 53, 0.33);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Footer right */
+.footer__right {
+    flex: 1;
+}
+
+.footer__row {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 100px;
+}
+
+.footer__column--title {
+    color: #000958;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.11;
+}
+
+.footer__column--list {
+    margin: 14px 0 58px 0;
+}
+
+.footer__column--link {
+    white-space: nowrap;
+    color: #656689;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2;
+}
+
+.footer__copy-right {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #656689;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.17;
 }
